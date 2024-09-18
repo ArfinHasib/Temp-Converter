@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Temparature Converter</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1 class="text-center">
+			<span id="fa" class="fa"></span> Temperature Converter
+		</h1>
+		<div class="container">
+			<form
+				class="text-center"
+				id="tempCalc"
+				onsubmit="calculateTemp(); return false">
+				<label for="temp"
+					>Please Enter the Temperature you'd like to convert.</label
+				>
+				<div class="row">
+					<div class="col">
+						<input
+							type="number"
+							step="any"
+							id="temp"
+							class="form-control"
+							placeholder="Enter Temperature" />
+					</div>
+					<div class="col">
+						<select
+							name="temp_diff"
+							class="form-control"
+							id="temp_diff">
+							<option value="cel">
+								<span>&#176;</span>Celsius
+							</option>
+							<option value="fah">
+								<span>&#176;</span>Fahrenheit
+							</option>
+						</select>
+					</div>
+				</div>
+				<!-- <input type="submit" class="d-flex justify-content-center mx-auto" name="temp"> -->
+				<button
+					type="submit"
+					class="btn btn-danger d-flex justify-content-center mx-auto my-2">
+					Submit
+				</button>
+				<br />
+				<span id="resultContainer"></span>
+			</form>
+		</div>
+
+		<!-- JS -->
+		<script src="script.js"></script>
+
+		<!-- Font Awesome -->
+		<script
+			src="https://kit.fontawesome.com/b8e4ae641e.js"
+			crossorigin="anonymous"></script>
+	</body>
+</html>
