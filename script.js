@@ -29,7 +29,7 @@ setInterval(() => {
 
 tempLoad();
 
-// Calculate the temp
+// Calculate the temperature
 const calculateTemp = () => {
 	const numberTemp = document.getElementById("temp").value;
 
@@ -37,20 +37,20 @@ const calculateTemp = () => {
 	const valeTemp = temp_diff.options[tempSelected.selectedIndex].value;
 
 	// Convert temperature from Farenheit to Celsius
-	const calToFah = (cel) => {
-		let farenheit = cel * (9 / 5) + 32;
-		return farenheit;
-	};
-
-	// Convert temperature from Celsius to Farenheit
 	const fahToCel = (fahr) => {
 		let celsius = ((fahr - 32) * 5) / 9;
 		return celsius;
 	};
 
+	// Convert temperature from Celsius to Farenheit
+	const celToFah = (cel) => {
+		let farenheit = cel * (9 / 5) + 32;
+		return farenheit;
+	};
+
 	let result;
 	if (valeTemp == "cel") {
-		result = calToFah(numberTemp);
+		result = celToFah(numberTemp);
 		document.getElementById(
 			"resultContainer"
 		).innerHTML = `= ${result.toFixed(2)} °Farenheit`;
